@@ -20,8 +20,16 @@ coverage:
 
 # target: translate - Generate translations to russian locale
 translate:
-	 python manage.py makemessages --locale=ru --ignore=venv/* --ignore=volumes/*
+	python manage.py makemessages --locale=ru --ignore=venv/* --ignore=volumes/*
 
 # target: compile-mes - Compile translated messages with previous command to russian locale
 compile-mes:
-	 python manage.py compilemessages --locale=ru
+	python manage.py compilemessages --locale=ru
+
+# target: superuser - Create super user
+superuser:
+	python manage.py createsuperuser
+
+# target: loaddata - load initial fixtures
+loaddata:
+	python manage.py loaddata auth_system/fixtures/initial_data.json
