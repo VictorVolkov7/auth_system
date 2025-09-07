@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16.2-alpine3.19
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    restart: always
+    expose:
+      - '5432'
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    command: >
+      bash -c "
+      python manage.py makemigrations &&
+      python manage.py migrate &&
+      django-admin compilemessages &&
+      python manage.py loaddata auth_system/fixtures/initial_data.json &&
+      python manage.py collectstatic --noinput &&
+      python manage.py runserver 0.0.0.0:8000
+      "
+    ports:
+      - '8000:8000'
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:
