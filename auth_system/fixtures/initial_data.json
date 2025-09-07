@@ -1,0 +1,110 @@
+[
+  {
+    "model": "users.user",
+    "fields": {
+      "username": "Ivan2000",
+      "email": "ivanov@mail.ru",
+      "first_name": "Ivan",
+      "last_name": "Ivanov",
+      "middle_name": "Ivanovich",
+      "password": "bcrypt_sha256$$2b$12$zCU7a030tHwd9GkbuYsoA.rgBOpCpPlfA.sKlorHWyi8xPzLlZdm.",
+      "role": 1,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true,
+      "created_at": "2025-09-04T21:59:04.212Z",
+      "updated_at": "2025-09-04T21:59:04.212Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "fields": {
+      "username": "admin",
+      "email": "admin@mail.ru",
+      "first_name": "Admin",
+      "last_name": "Adminov",
+      "middle_name": "",
+      "password": "bcrypt_sha256$$2b$12$zCU7a030tHwd9GkbuYsoA.rgBOpCpPlfA.sKlorHWyi8xPzLlZdm.",
+      "role": 2,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "created_at": "2025-09-04T21:59:04.212Z",
+      "updated_at": "2025-09-04T21:59:04.212Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "fields": {
+      "username": "Maksim8",
+      "email": "maksimov@example.com",
+      "first_name": "Maksim",
+      "last_name": "Mask",
+      "middle_name": "Maksimovich",
+      "password": "bcrypt_sha256$$2b$12$zCU7a030tHwd9GkbuYsoA.rgBOpCpPlfA.sKlorHWyi8xPzLlZdm.",
+      "role": 3,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "created_at": "2025-09-04T21:59:04.212Z",
+      "updated_at": "2025-09-04T21:59:04.212Z"
+    }
+  },
+  {
+    "model": "users.businesselement",
+    "fields": {
+      "name": "Товары",
+      "description": "Объекты для работы с товарами",
+      "created_at": "2025-09-04T21:59:04.212Z",
+      "updated_at": "2025-09-04T21:59:04.212Z"
+    }
+  },
+  {
+    "model": "users.accessrolerule",
+    "fields": {
+      "role": 1,
+      "element": 1,
+      "read_permission": true,
+      "read_all_permission": false,
+      "create_permission": true,
+      "update_permission": true,
+      "update_all_permission": false,
+      "delete_permission": true,
+      "delete_all_permission": false,
+      "created_at": "2025-09-04T21:59:04.212Z",
+      "updated_at": "2025-09-04T21:59:04.212Z"
+    }
+  },
+  {
+    "model": "users.accessrolerule",
+    "fields": {
+      "role": 2,
+      "element": 1,
+      "read_permission": true,
+      "read_all_permission": true,
+      "create_permission": true,
+      "update_permission": true,
+      "update_all_permission": true,
+      "delete_permission": true,
+      "delete_all_permission": true,
+      "created_at": "2025-09-04T21:59:04.212Z",
+      "updated_at": "2025-09-04T21:59:04.212Z"
+    }
+  },
+  {
+    "model": "users.accessrolerule",
+    "fields": {
+      "role": 3,
+      "element": 1,
+      "read_permission": true,
+      "read_all_permission": true,
+      "create_permission": true,
+      "update_permission": true,
+      "update_all_permission": true,
+      "delete_permission": true,
+      "delete_all_permission": false,
+      "created_at": "2025-09-04T21:59:04.212Z",
+      "updated_at": "2025-09-04T21:59:04.212Z"
+    }
+  }
+]
